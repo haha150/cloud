@@ -54,8 +54,8 @@ public class Main {
     
     else if(process == 1){		//UPLOAD (append + flush)
     	try{
-		HopsHelper.simpleCreate(ugi, hdfsConfig, filePath);
 		long startTime = System.nanoTime();
+		HopsHelper.simpleCreate(ugi, hdfsConfig, filePath);
 		byte[] data = Files.readAllBytes(path);
 		HopsHelper.append(ugi, hdfsConfig, filePath, data);
 		HopsHelper.flush(ugi, hdfsConfig, filePath);
